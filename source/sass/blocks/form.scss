@@ -1,0 +1,48 @@
+.form {
+  position: relative;
+
+  &::before {
+    @media (min-width: $desktop-width) {
+      content: "";
+      position: absolute;
+
+      width: 50%;
+      height: 100%;
+
+      top: 0;
+      left: 0;
+
+      background-color: $basic-blue;
+
+      z-index: -50;
+    }
+  }
+
+  &::after {
+    @media (min-width: $desktop-width) {
+      content: "";
+      position: absolute;
+
+      width: 100%;
+      height: 1px;
+
+      top: 0;
+
+      background-color: $divider;
+    }
+  }
+}
+
+.form__container {
+  padding: 0;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

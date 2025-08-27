@@ -1,0 +1,291 @@
+.features {
+  background-color: $light-grey;
+}
+
+.features__container {
+  padding: 40px 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px 103px 99px;
+  }
+}
+
+.features__title {
+  margin: 0 0 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 50px;
+
+    font-size: 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 51px;
+
+    font-size: 54px;
+  }
+}
+
+.features__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 80px 40px;
+  }
+}
+
+.features__item {
+  padding: 0 45px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    width: 324px;
+
+    padding: 0;
+
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 110px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      left: 0;
+      right: 0;
+      top: -42px;
+      background-color: $tabs-state;
+      opacity: 20%;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  dl {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $tablet-width) {
+      align-items: flex-start;
+    }
+  }
+
+  dt {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    background: linear-gradient(128deg, $tabs-state 0%, $accent-blue 45%);
+    background-clip: text;
+    color: transparent;
+
+    @media (min-width: $tablet-width) {
+      font-size: 70px;
+    }
+  }
+
+  dd {
+    margin: 0;
+
+    line-height: 20px;
+    color: $accent-dark-blue;
+
+    @media (min-width: $tablet-width) {
+      line-height: 22px;
+    }
+  }
+
+  div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+
+    @media (min-width: $tablet-width) {
+      align-items: flex-start;
+    }
+
+    @media (min-width: $desktop-width) {
+      max-width: 210px;
+
+      gap: 8px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: $basic-blue;
+    text-align: center;
+
+    @media (min-width: $tablet-width) {
+      font-size: 20px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 22px;
+      line-height: 100%;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    font-weight: 300;
+    line-height: 22px;
+    color: $basic-blue;
+    text-align: center;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+}
+
+.features__item--important {
+  margin: 5px 0;
+  padding: 30px 75px 40px;
+
+  gap: 20px;
+
+  background-color: $light-blue;
+
+  @media (min-width: $tablet-width) {
+    width: 320px;
+
+    margin: 0 auto;
+    padding: 35px;
+
+    flex-direction: column;
+    gap: 25px;
+
+    grid-column: 1/-1;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+
+    padding: 58px 40px;
+
+    justify-content: center;
+    gap: 30px;
+
+    grid-column: 2;
+    grid-row: 1/-1;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  dl {
+    width: 100%;
+
+    gap: 5px;
+    align-items: center;
+
+    @media (min-width: $tablet-width) {
+      gap: 25px;
+    }
+
+    @media (min-width: $desktop-width) {
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  dt {
+    color: $basic-white;
+  }
+
+  dd {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    color: $basic-white;
+
+    @media (min-width: $tablet-width) {
+      font-size: 24px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 26px;
+    }
+  }
+
+  div {
+    max-width: 100%;
+
+    align-items: center;
+  }
+
+  h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+
+  p {
+    color: $basic-white;
+
+    @media (min-width: $tablet-width) {
+      max-width: 250px;
+
+      text-align: center;
+    }
+
+    @media (min-width: $desktop-width) {
+      max-width: 100%;
+    }
+  }
+}

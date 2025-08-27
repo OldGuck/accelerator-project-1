@@ -1,0 +1,65 @@
+.slider {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.slider__button {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 8px;
+
+    background-color: transparent;
+    border: 1px transparent solid;
+    border-radius: 100%;
+
+    &:hover {
+      cursor: pointer;
+      border-color: $basic-blue;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $price-decor;
+      border-color: $basic-blue;
+    }
+
+    &:active {
+      background-color: $basic-blue;
+      border-color: $basic-blue;
+
+      .reviews__button-icon {
+        stroke: $basic-white;
+      }
+    }
+
+    &:disabled {
+      pointer-events: none;
+      stroke: $basic-blue;
+      border-color: transparent;
+      opacity: 30%;
+    }
+  }
+
+  &--prev {
+    @media (min-width: $tablet-width) {
+      .slider__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.slider__icon {
+  @media (min-width: $tablet-width) {
+    stroke: $basic-blue;
+  }
+}

@@ -1,0 +1,124 @@
+.free-lesson-form {
+  padding: 70px 15px;
+  background-color: $basic-blue;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 71px 103px 70px;
+
+    background-color: none;
+  }
+}
+
+.free-lesson-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  @media (min-width: $tablet-width) {
+    width: 440px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}
+
+.free-lesson-form__title {
+  margin: 0 0 23px;
+
+  color: $basic-white;
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    text-align: center;
+
+    grid-column: 1/-1;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: left;
+  }
+}
+
+.free-lesson-form__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.free-lesson-form__input {
+  padding: 4px 0;
+
+  background-color: transparent;
+  border: 1px transparent solid;
+  border-bottom-color: $divider;
+
+  font-weight: 300;
+  line-height: 22px;
+  color: $basic-white;
+
+  &::placeholder {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    color: $basic-white;
+    opacity: 40%;
+  }
+
+  &--error {
+    border-bottom-color: $error;
+  }
+
+  &:hover {
+    border-bottom-color: $basic-white;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px $basic-white solid;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+
+    padding: 4px 0;
+  }
+}
+
+.free-lesson-form__error {
+  min-height: 22px;
+
+  line-height: 22px;
+  color: $error;
+}
+
+.free-lesson-form__button {
+  width: 100%;
+
+  margin-top: 5px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 3px;
+    padding: 25px;
+
+    grid-column: 1/-1;
+  }
+}

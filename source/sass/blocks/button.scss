@@ -1,0 +1,58 @@
+.button {
+  background-color: transparent;
+  border: 2px $basic-white solid;
+  padding: 22px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  color: $basic-white;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $basic-white;
+    color: $basic-text-accent;
+  }
+
+  &:focus {
+    outline: none;
+    color: $basic-text-accent;
+    border-color: $basic-black;
+    background-color: $basic-white;
+    opacity: 80%;
+  }
+
+  &:active {
+    color: $basic-blue;
+    border-color: $basic-white;
+    background-color: $basic-white;
+    opacity: 100%;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: $basic-white;
+    border-color: $basic-white;
+    background-color: transparent;
+    opacity: 50%;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    color: $basic-white;
+    border-color: $basic-white;
+    background-color: transparent;
+    opacity: 50%;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 25px;
+  }
+}

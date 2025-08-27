@@ -1,0 +1,404 @@
+.faq {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  background-color: $light-grey;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.faq__container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    gap: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 50px 40px;
+    align-items: flex-start;
+  }
+}
+
+.faq__title {
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 54px;
+    text-align: left;
+
+    grid-column: 1/-1;
+  }
+}
+
+.faq__tabs-wrapper {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 260px;
+
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.faq__tab {
+  width: 100%;
+  min-height: 46px;
+
+  padding: 14px;
+
+  font-size: 16px;
+  line-height: 100%;
+  color: $basic-blue;
+
+  background-color: transparent;
+  border: 1px rgba($basic-blue, 20%) solid;
+  border-radius: 0%;
+
+  @media (min-width: $tablet-width) {
+    padding: 17px;
+
+    font-size: 18px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    cursor: pointer;
+    background: none;
+    color: $basic-blue;
+    border: 1px $basic-blue solid;
+  }
+
+  &--current {
+    padding: 15px;
+    color: $basic-white;
+    background: linear-gradient(97deg, $banner 17%, $gradient-blue 95%);
+    border: none;
+
+    @media (min-width: $tablet-width) {
+      padding: 18px;
+    }
+
+    &:hover,
+    &:focus {
+      padding: 14px;
+      color: $basic-white;
+      background: linear-gradient(97deg, $banner 17%, $gradient-blue 95%);
+
+      @media (min-width: $tablet-width) {
+        padding: 17px;
+      }
+    }
+
+    &:disabled {
+      padding: 14px;
+
+      @media (min-width: $tablet-width) {
+        padding: 17px;
+      }
+    }
+  }
+
+  &:active {
+    color: $basic-white;
+    background: linear-gradient(97deg, $banner 17%, $gradient-blue 95%);
+    border: none;
+
+    @media (min-width: $tablet-width) {
+      padding: 18px;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background: none;
+    color: $add-grey;
+    border: 1px rgba($basic-blue, 20%) solid;
+  }
+}
+
+.faq__list {
+  position: relative;
+  display: none;
+
+  &--current {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &::before {
+    @media (min-width: $desktop-width) {
+      content: "";
+      position: absolute;
+      height: 1px;
+      top: -1px;
+      left: 0;
+      right: 0;
+      background-color: $divider;
+    }
+  }
+}
+
+.faq__item {
+  color: $basic-blue;
+
+  border-bottom: 1px $divider solid;
+
+  &:first-of-type {
+    border-top: 1px $divider solid;
+
+    @media (min-width: $desktop-width) {
+      border-top: none;
+    }
+  }
+
+  div {
+    display: flex;
+
+    &:first-of-type {
+      padding: 20px 0;
+
+      justify-content: space-between;
+      align-items: center;
+
+      @media (min-width: $tablet-width) {
+        padding: 23px 0;
+      }
+
+      @media (min-width: $desktop-width) {
+        padding-bottom: 22px;
+      }
+    }
+
+    &:last-of-type {
+      overflow: hidden;
+      overflow-y: auto;
+
+      height: 0;
+
+      flex-direction: column;
+      gap: 10px;
+
+      transition: 1s;
+    }
+  }
+
+  br {
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  h3 {
+    max-width: 238px;
+
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+
+    @media (min-width: $tablet-width) {
+      max-width: 500px;
+
+      font-size: 22px;
+    }
+
+    @media (min-width: $desktop-width) {
+      max-width: 660px;
+
+      font-size: 24px;
+    }
+  }
+
+  p {
+    padding-right: 52px;
+
+    margin: 0;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media (min-width: $tablet-width) {
+      padding-right: 118px;
+
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding-right: 200px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .faq__button {
+      background-color: $light-blue;
+    }
+
+    .faq__button::before,
+    .faq__button::after {
+      background-color: $basic-white;
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+}
+
+.faq__item--opened {
+  div {
+    &:first-of-type {
+      @media (min-width: $tablet-width) {
+        padding-bottom: 10px;
+      }
+
+      @media (min-width: $desktop-width) {
+        padding-bottom: 23px;
+      }
+    }
+
+    &:last-of-type {
+      padding-bottom: 20px;
+
+      height: 140px;
+
+      @media (min-width: $tablet-width) {
+        padding-bottom: 23px;
+
+        height: 95px;
+      }
+
+      @media (min-width: $desktop-width) {
+        padding-bottom: 22px;
+
+        height: 94px;
+      }
+    }
+  }
+}
+
+.faq__item--opened .faq__button {
+  background-color: $light-blue;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    background-color: $basic-white;
+  }
+}
+
+.faq__button {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  background-color: transparent;
+  border: 1px $light-blue solid;
+  border-radius: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%) rotate(90deg);
+    background-color: $light-blue;
+
+    @media (min-width: $tablet-width) {
+      width: 20px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    background-color: $light-blue;
+
+    @media (min-width: $tablet-width) {
+      width: 20px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+
+    border-color: $light-blue;
+    background-color: $divider;
+
+    &::before,
+    &::after {
+      background-color: $basic-white;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+
+    border-color: $light-blue;
+    background-color: transparent;
+    opacity: 30%;
+
+    &::before,
+    &::after {
+      background-color: $light-blue;
+    }
+  }
+}

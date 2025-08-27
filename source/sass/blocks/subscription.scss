@@ -1,0 +1,401 @@
+.subscription {
+  background-color: $light-grey;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 325px;
+      height: 388px;
+      bottom: 0;
+      right: 0;
+      background-size: 325px 388px;
+      background-image: url("../../img/plates-tablet@1x.png");
+      background-repeat: no-repeat;
+      z-index: 10;
+    }
+
+    @media (min-resolution: $retina-resolution) {
+      &::after {
+        background-image: url("../../img/plates-tablet@2x.png");
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &::after {
+      width: 303px;
+      height: 448px;
+      background-size: 303px 448px;
+      background-image: url("../../img/plates-desktop@1x.png");
+    }
+
+    @media (min-resolution: $retina-resolution) {
+      &::after {
+        background-image: url("../../img/plates-desktop@2x.png");
+      }
+    }
+  }
+}
+
+.subscription__container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.subscription__title {
+  margin: 0 0 30px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 35px;
+
+    font-size: 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+
+    font-size: 54px;
+  }
+}
+
+.subscription__tabs-wrapper {
+  width: 290px;
+
+  margin-bottom: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  justify-content: space-between;
+  gap: 15px;
+
+  border-bottom: 2px rgba(#787878, 20%) solid;
+
+  @media (min-width: $tablet-width) {
+    width: 310px;
+
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 350px;
+
+    margin-bottom: 40px;
+  }
+}
+
+.subscription__tab-button {
+  position: relative;
+
+  padding: 0 0 8px;
+  border: none;
+
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba($basic-blue, 50%);
+  white-space: nowrap;
+
+  background-color: transparent;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: rgba($basic-blue, 70%);
+
+    &::after {
+      background-color: #787878;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    color: $basic-blue;
+
+    &::after {
+      background-color: $basic-blue;
+    }
+  }
+
+  &:active {
+    color: $basic-blue;
+
+    &::after {
+      background-color: $banner;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: $basic-blue;
+    opacity: 30%;
+
+    &::after {
+      background-color: $basic-blue;
+    }
+  }
+}
+
+.subscription__tab-button--current {
+  color: $basic-blue;
+
+  &::after {
+    background-color: $tabs-state;
+  }
+}
+
+.subscription__list {
+  width: 290px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  @media (min-width: $tablet-width) {
+    width: 380px;
+
+    gap: 40px;
+
+    z-index: 20;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1160px;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.subscription__item {
+  width: 100%;
+  padding: 50px 42px;
+
+  color: $basic-blue;
+  background-color: $basic-white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    padding: 65px;
+
+    gap: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 360px;
+
+    gap: 17px;
+  }
+
+  &:has(.subscription__button:hover),
+  &:has(.subscription__button:focus) {
+    padding: 43px 35px;
+    border: 7px solid;
+    border-image: linear-gradient(149deg, $tabs-state 0%, #00359f 100%);
+    border-image-slice: 1;
+
+    .subscription__button:hover {
+      opacity: 100%;
+      padding: 27px;
+      color: $basic-white;
+      background: linear-gradient(97deg, $banner 17%, $gradient-blue 95%);
+      border: none;
+    }
+
+    @media (min-width: $tablet-width) {
+      padding: 58px;
+    }
+  }
+}
+
+.subscription__name {
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 100%;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 26px;
+  }
+}
+
+.subscription__description {
+  font-weight: 300;
+  line-height: 22px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.subscription__price-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.subscription__price-decor {
+  max-width: 206px;
+
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 120px;
+  color: $price-decor;
+  text-align: center;
+  word-wrap: break-word;
+
+  @media (min-width: $tablet-width) {
+    max-width: 100%;
+
+    font-size: 100px;
+    line-height: 150px;
+  }
+}
+
+.subscription__price {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+
+  width: fit-content;
+  min-width: 98px;
+  max-width: 150px;
+
+  margin-left: 37px;
+  padding-right: 10px;
+
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  color: $basic-text-accent;
+  word-wrap: break-word;
+
+  @media (min-width: $tablet-width) {
+    min-width: 122px;
+    max-width: 180px;
+
+    margin-left: 42px;
+    padding-right: 14px;
+
+    font-size: 60px;
+    line-height: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 32px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 33px;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+    background-repeat: no-repeat;
+    background-image: url("../__spritemap#sprite-ruble-view");
+
+    @media (min-width: $tablet-width) {
+      width: 30px;
+      height: 42px;
+    }
+  }
+}
+
+.subscription__button {
+  width: 100%;
+
+  padding: 25px;
+
+  color: $basic-blue;
+  border-color: $basic-blue;
+
+  &--offset {
+    @media (min-width: $tablet-width) {
+      margin-top: 1px;
+    }
+  }
+
+  &:hover {
+    padding: 27px;
+    color: $basic-white;
+    background: linear-gradient(97deg, $banner 17%, $gradient-blue 95%);
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+    padding: 25px;
+    color: $basic-white;
+    background: linear-gradient(97deg, rgba($banner, 80%) 17%, rgba($gradient-blue, 80%) 95%);
+    border: 2px $basic-black solid;
+  }
+
+  &:active {
+    padding: 27px;
+    color: rgba($basic-white, 70%);
+    background: linear-gradient(97deg, $banner 17%, $gradient-blue 95%);
+    border: none;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    padding: 25px;
+    opacity: 30%;
+    color: $basic-blue;
+    background: transparent;
+    border: 2px $basic-blue solid;
+  }
+}

@@ -1,0 +1,11 @@
+.header {
+  background: linear-gradient(90deg, $light-blue 0%, #1a3578 39%, #73184b 75%, #b4022a 100%);
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: $basic-white;
+}
